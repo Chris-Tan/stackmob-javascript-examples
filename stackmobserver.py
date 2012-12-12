@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-# StackMob Web Server v0.1.0
+# StackMob Web Server v0.1.1
 #
 # This server is used for running HTML5 StackMob applications
 # locally on your computer for development purposes.
@@ -116,4 +116,8 @@ class ProxyHandler(SimpleHTTPRequestHandler):
 
 httpd = SocketServer.TCPServer(('', 4567), ProxyHandler)
 print 'serving at port', 4567
-httpd.serve_forever()
+try:
+    print 'Use Control-C to exit'
+    httpd.serve_forever()
+except KeyboardInterrupt:
+    print 'Exiting'
