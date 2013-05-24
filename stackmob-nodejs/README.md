@@ -5,17 +5,17 @@ This example isn't refined (sorry!).  Rather, it was an experiment that needs so
 
 To run:
 
-1.  Add your Key
+1.  Open `./start-oauth2-example.js`
 
-    Open `./start-oauth2-example.js`
+    Add your public key. Find it in your <a href="https://dashboard.stackmob.com/settings" target="_blank">App Settings</a>
 
-    Add your public key
-
-2.  Run this from the terminal.
+2.  Go to the `./stackmob-javascript-examples/stackmob-nodejs/` folder and run this from the terminal.
 
 	```
 	$  node nodeexample.js
 	```
+	
+    Your server is now running.
 
 3.  Visit <a href="http://127.0.0.1:1337/" target="_blank">http://127.0.0.1:1337/</a>
 
