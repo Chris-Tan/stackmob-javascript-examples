@@ -29,7 +29,7 @@ To run:
 
 # Current Modifications
 
-Added the following to the top of `./stackmob/stackmob-lib/stackmob-0.9.2.js`
+Added the following to the top of `./stackmob-javascript-examples/stackmob/stackmob-lib/stackmob-0.9.2.js`
 
 ```js
 exports.jQuery = require('jquery');
