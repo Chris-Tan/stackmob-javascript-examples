@@ -16,10 +16,6 @@ To run:
     Add your public key. Find it in your <a href="https://dashboard.stackmob.com/settings" target="_blank">App Settings</a>
     
     ```js
-    require('stackmob');
-    var http = require('http');
-    http.createServer(function (req, res) {
-
     StackMob.init({
         publicKey: "YOUR PUBLIC KEY",
         apiVersion: 0
