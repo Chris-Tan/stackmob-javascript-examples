@@ -14,6 +14,17 @@ To run:
 1.  Open `./start-oauth2-example.js`
 
     Add your public key. Find it in your <a href="https://dashboard.stackmob.com/settings" target="_blank">App Settings</a>
+    
+    ```js
+    require('stackmob');
+    var http = require('http');
+    http.createServer(function (req, res) {
+
+    StackMob.init({
+        publicKey: "YOUR PUBLIC KEY",
+        apiVersion: 0
+    });
+    ```
 
 2.  Go to the `./stackmob-javascript-examples/stackmob-nodejs/` folder and run this from the terminal.
 
