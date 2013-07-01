@@ -74,18 +74,26 @@
             // Notice how StackMob auto generated a unique primary key for this object instance under "testobject_id".
             // Schema primary keys are [schema name]_id
             // If you specified "testobject_id" in your JSON, StackMob will use your given one instead.
-            console.debug(model.toJSON());
+            console.log(model.toJSON());
             $(".error").hide();
             $(".success").show();
           },
           error : function(model, response) {
-            console.debug("Oops there was an error in creating the object.");
-            console.debug("Have you initialized your JS SDK?");
-            console.debug("Are you running this on StackMob's Local Runner?");
-            console.debug("Are you running this on StackMob's GitHub-integrated hosting?")
-            console.debug(response);
+            console.log("Oops there was an error in creating the object.");
+            console.log("Have you initialized your JS SDK?");
+            console.log("Are you running this on StackMob's Local Runner?");
+            console.log("Are you running this on StackMob's GitHub-integrated hosting?")
+            console.log(response);
+            if (response.error === "Invalid JSON returned." && !$("#error_initialize").is(":visible")) {
+              $("#error_cors").css("font-weight", "bold").css("color", "#900");
+            }
           }
         });
+
+        // Error handling specific to this example
+        if (StackMob.publicKey === "your_public_key") {
+          $("#error_initialize").css("font-weight", "bold").css("color", "#900");
+        }
       });
       /* ]]> */
 		</script>
@@ -120,11 +128,14 @@
   			View the source, then learn more!
   			<ul>
   				<li>
-  					<a href="http://developer.stackmob.com/tutorials/js" target="_blank">JS SDK Tutorials</a>
+  					<a href="https://developer.stackmob.com/js-sdk" target="_blank">JavaScript Developer Home Page</a>
   				</li>
   				<li>
-  					<a href="https://developer.stackmob.com/sdks/js/api" target="_blank">JS SDK API Docs</a>
+  					<a href="https://developer.stackmob.com/js-sdk/developer-guide" target="_blank">JavaScript Developer Guide</a>
   				</li>
+          <li>
+            <a href="https://developer.stackmob.com/js-sdk/api-docs" target="_blank">JavaScript API DOCS</a>
+          </li>
   			</ul>
       </p>
       <p>
@@ -142,20 +153,11 @@
         If this message doesn't go away, something might be wrong.<br/><br/>
         <h3>Troubleshooting tips:</h3>
         <ul>
-          <li>
-            Don't forget to <a href="https://dashboard.stackmob.com/sdks/js/config" target="_blank">initialize the JS SDK</a> in this file (index.html)
+          <li id="error_initialize">
+            Don't forget to <a href="https://dashboard.stackmob.com/sdks/js/config" target="_blank">initialize the JS SDK</a> in this file (index.html).
           </li>
-          <li>
-            You must view this file through a web server (ex: localhost:4567) not directly (ex: file://.../index.html).
-            <ul>
-              <li>
-                If you're running this through your own server, be sure to add your url (ex: http://localhost:1234) to your <a href="https://dashboard.stackmob.com/module/cors/settings">CORS whitelist</a>.
-              </li>
-              <li>
-                The StackMob Web Server is included in this package if you don't already have one. Just run
-                stackmobserver.py (located in this same directory). <a href="http://www.python.org/getit/" target="_blank">Requires Python 2.7+</a>
-              </li>
-            </ul>
+          <li id="error_cors">
+            If you're running this through your own server, be sure to add your url (ex: http://localhost:1234) to your <a href="https://dashboard.stackmob.com/module/cors/settings">CORS whitelist</a>. Optionally add <code>*</code> as a CORS host to allow all domains.
           </li>
         </ul>
       </p>
