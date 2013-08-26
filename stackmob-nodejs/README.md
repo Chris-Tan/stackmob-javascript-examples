@@ -36,7 +36,7 @@ To run:
 
 # Current Modifications
 
-Added the following to the top of `./stackmob-javascript-examples/stackmob/stackmob-lib/stackmob-x.y.z.js`, where `x.y.z` is the latest version of the JS SDK.  Find the current version of the SDK on the <a href="https://developer.stackmob.com/js-sdk" target="_blank">JavaScript SDK home page</a>.
+Added the following to the top of `./stackmob-javascript-examples/stackmob/stackmob-lib/stackmob-x.y.z.js`, where `x.y.z` is the StackMob JS SDK.  You can find the current version of the SDK on the <a href="https://developer.stackmob.com/js-sdk" target="_blank">JavaScript SDK home page</a>.
 
 ```js
 exports.jQuery = require('jquery');
